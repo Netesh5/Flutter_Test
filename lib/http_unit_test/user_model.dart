@@ -4,12 +4,11 @@ class User {
   final String email;
   final String name;
   final int id;
-  final String website;
+
   User({
     required this.email,
     required this.name,
     required this.id,
-    required this.website,
   });
 
   User copyWith({
@@ -22,7 +21,6 @@ class User {
       email: email ?? this.email,
       name: name ?? this.name,
       id: id ?? this.id,
-      website: website ?? this.website,
     );
   }
 
@@ -32,7 +30,6 @@ class User {
     result.addAll({'email': email});
     result.addAll({'name': name});
     result.addAll({'id': id});
-    result.addAll({'website': website});
 
     return result;
   }
@@ -42,7 +39,6 @@ class User {
       email: map['email'] ?? '',
       name: map['name'] ?? '',
       id: map['id']?.toInt() ?? 0,
-      website: map['website'] ?? '',
     );
   }
 
@@ -52,7 +48,7 @@ class User {
 
   @override
   String toString() {
-    return 'User(email: $email, name: $name, id: $id, website: $website)';
+    return 'User(email: $email, name: $name, id: $id)';
   }
 
   @override
@@ -62,12 +58,11 @@ class User {
     return other is User &&
         other.email == email &&
         other.name == name &&
-        other.id == id &&
-        other.website == website;
+        other.id == id;
   }
 
   @override
   int get hashCode {
-    return email.hashCode ^ name.hashCode ^ id.hashCode ^ website.hashCode;
+    return email.hashCode ^ name.hashCode ^ id.hashCode;
   }
 }
