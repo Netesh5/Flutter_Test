@@ -7,8 +7,14 @@ class Counter {
   }
 
   decrement() {
-    if (_counter >= 0) {
-      _counter--;
-    }
+    // if (_counter > 0) {
+    _counter--;
+    // }
+  }
+
+  reset() {
+    // if (_counter > 0) {
+    _counter = 0;
+    // }
   }
 }
