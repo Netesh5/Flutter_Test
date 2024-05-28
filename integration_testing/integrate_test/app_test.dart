@@ -21,5 +21,20 @@ void main() {
 
       expect(find.byType(HomePage), findsOneWidget);
     });
+
+    testWidgets(
+        'verify the login incorrect email and password and show error dialog',
+        (widgetTester) async {
+      app.main();
+      await widgetTester.pumpAndSettle();
+      await widgetTester.enterText(
+          find.byType(TextFormField).at(0), 'username');
+      await widgetTester.enterText(find.byType(TextFormField).at(1), 'passwor');
+
+      await widgetTester.tap(find.byType(ElevatedButton));
+      await widgetTester.pumpAndSettle();
+
+      expect(find.byType(AlertDialog), findsOneWidget);
+    });
   });
 }
