@@ -1,5 +1,0 @@
-package com.example.integrating_testing
-
-import io.flutter.embedding.android.FlutterActivity
-
-class MainActivity: FlutterActivity()
